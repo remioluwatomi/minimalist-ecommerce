@@ -1,16 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Route, Routes } from "react-router-dom";
+import Home from "./Pages/Home";
+import Product from "./Pages/Product";
+import Category from "./Pages/Category";
+import HeaderAndFooter from "./Components/HeaderAndFooter";
+import "./stylesheets/main.css";
+
+export type Paths = "/" | "products" | "categories";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <h1>Minimalist Ecommerce App</h1>
+      <Routes>
+        <Route element={<HeaderAndFooter />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/product" element={<Product />} />
+          <Route path="/product/:productName" element={<Product />} />
+          <Route path="/categories" element={<Category />} />
+        </Route>
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
