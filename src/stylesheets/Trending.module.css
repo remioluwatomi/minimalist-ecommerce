@@ -1,26 +1,36 @@
+
 .trending {
     margin: 60px auto;
   }
   
-  .trending > div:first-child {
-    display: flex;
-    position: relative;
-    margin-bottom: 2.3rem;
-  }
+.trending > div:first-child {
+  display: flex;
+  position: relative;
+  margin-bottom: 2.3rem;
+}
+  
+.trending-slider-button-wrapper{
+  position: relative;
+}
   
   .trending button {
-    background-color: #373737;
-    padding: 0.4rem;
+    background-color: rgb(229, 229, 229);
+    padding: 0.2rem;
     color: white;
     transition: background-color ease 200ms;
   }
-  .trending button:hover {
-    background-color: black;
+  .trending button::before, .trending button::after{
+    content: "";
   }
-  
-  .trending button:first-child {
+
+
+.trending button:hover {
+  background-color: rgb(206, 203, 203);
+}
+ 
+  /* .trending button:first-child {
     margin-right: 0.4rem;
-  }
+  } */
   .trending > div:first-child h3 {
     margin-right: auto;
     font-weight: 600;
