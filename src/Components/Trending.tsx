@@ -1,7 +1,7 @@
 import React from "react";
 import { A11y, Navigation, Pagination, Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+import 'swiper/swiper-bundle.css';
 import styles from "../stylesheets/Trending.module.css";
 import ProductGridItem from "./ProductGridItem";
 import { useProductContext } from "../context/ProductContext";
@@ -14,7 +14,7 @@ const Trending: React.FC = () => {
       <section className={`${styles.trending} containerWidth`}>
         <div>
           <h3>Trending Now</h3>
-          <div>
+          <div style={{width: "90px", position: "relative"}} className="trending-slider-button-wrapper">
             <button className="swiper-button-prev">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
