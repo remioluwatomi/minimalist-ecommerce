@@ -1,7 +1,7 @@
 import React from "react";
 import { A11y, Navigation, Pagination, Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+import "swiper/css"
 import styles from "../stylesheets/Trending.module.css";
 import ProductGridItem from "./ProductGridItem";
 import { useProductContext } from "../context/ProductContext";
