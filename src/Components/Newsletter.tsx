@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { validate } from "email-validator";
-// import styles from "../stylesheets/NewsLetter.module.css";
 import styles from "../stylesheets/Newsletter.module.css";
 
 const Newsletter: React.FC = () => {

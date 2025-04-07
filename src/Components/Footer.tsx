@@ -31,9 +31,9 @@ const Footer: React.FC = () => {
             <a
               style={{ color: "#b7a9b7f2" }}
               target="_blank"
-              href="https://github.com/xploytt"
+              href="https://github.com/remioluwatomi"
             >
-              xploytt
+              tomi
             </a>
           </small>
         </div>
