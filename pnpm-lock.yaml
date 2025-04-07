@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      email-validator:
+        specifier: ^2.0.4
+        version: 2.0.4
       react:
         specifier: ^19.0.0
         version: 19.1.0
@@ -648,6 +651,10 @@ packages:
 
   electron-to-chromium@1.5.132:
     resolution: {integrity: sha512-QgX9EBvWGmvSRa74zqfnG7+Eno0Ak0vftBll0Pt2/z5b3bEGYL6OUXLgKPtvx73dn3dvwrlyVkjPKRRlhLYTEg==}
+
+  email-validator@2.0.4:
+    resolution: {integrity: sha512-gYCwo7kh5S3IDyZPLZf6hSS0MnZT8QmJFqYvbqlDZSbwdZlY6QZWxJ4i/6UhITOJ4XzyI647Bm2MXKCLqnJ4nQ==}
+    engines: {node: '>4.0'}
 
   esbuild@0.25.2:
     resolution: {integrity: sha512-16854zccKPnC+toMywC+uKNeYSv+/eXkevRAfwRD/G9Cleq66m8XFIrigkbvauLLlCfDL45Q2cWegSg53gGBnQ==}
@@ -1648,6 +1655,8 @@ snapshots:
   deep-is@0.1.4: {}
 
   electron-to-chromium@1.5.132: {}
+
+  email-validator@2.0.4: {}
 
   esbuild@0.25.2:
     optionalDependencies:
