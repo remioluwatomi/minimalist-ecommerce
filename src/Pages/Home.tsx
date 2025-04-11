@@ -6,6 +6,7 @@ import Trending from "../Components/Trending";
 import ProductGrid from "../Components/ProductGrid";
 import ProductGridItem from "../Components/ProductGridItem";
 import { ProductProvider, useProductContext } from "../context/ProductContext";
+import Hero from "../Components/Hero";
 
 
 const ProductWeAreProudOf: React.FC = () => {
@@ -57,6 +58,7 @@ const Home: React.FC = () => {
 
   return (
     <ProductProvider>
+      <Hero />
       <ProductWeAreProudOf />
       <ShopNow image={ShopNowInfo.image} content={ShopNowInfo.content} />
       <Trending />
