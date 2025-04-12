@@ -87,4 +87,9 @@ div.close {
   transform: translate(0);
 }
 
+* {
+  touch-action: manipulation;
+}
+
+
     
