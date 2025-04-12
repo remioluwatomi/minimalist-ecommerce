@@ -5,6 +5,9 @@ import { fetchProductByName, Product } from "../supabase/supabase";
 import { kebabToTitleCase } from "../utilities/toKebab";
 import getRandomElements from "../utilities/getRandomElements";
 import styles from "../stylesheets/ProductPage.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { CartDispatch, CartRootState } from "../redux/store";
+import { addToCart, decrementQuantity, removeItem } from "../redux/cartSlice";
 
 const ProductDetails: React.FC = () => {
   type IRouteParams = {
@@ -28,6 +31,8 @@ const ProductDetails: React.FC = () => {
   const [largeImg, setLargeImg] = useState(product?.imgs?.img1);
   const location = useLocation();
   const topRef = useRef<HTMLElement>(null);
+  const dispatch = useDispatch<CartDispatch>();
+  const cart = useSelector((state: CartRootState) => state.cart);
 
   //scroll to up
   useEffect(() => {
@@ -51,7 +56,7 @@ const ProductDetails: React.FC = () => {
 
     getProduct();
 
-    return () => setProduct(defaultProduct);
+    // return () => setProduct(defaultProduct);
   }, [productName, trendingProducts]);
 
   return (
@@ -89,19 +94,26 @@ const ProductDetails: React.FC = () => {
               <button
                 style={{ borderLeftColor: "black" }}
                 onClick={() => {
-                  console.log("decrement quantity..")
+                  dispatch(decrementQuantity(product?.name));
                 }}
               >
                 -
               </button>
               <span>
-                5
+                {cart.cart.find((item) => item.name === product?.name)
+                  ?.quantity ?? 0}
               </span>
 
               <button
                 style={{ borderRightColor: "black" }}
                 onClick={() =>
-                  console.log("Add to cart..")
+                  dispatch(
+                    addToCart({
+                      ...product,
+                      quantity: 1,
+                      total: product?.price,
+                    })
+                  )
                 }
               >
                 +
@@ -109,16 +121,18 @@ const ProductDetails: React.FC = () => {
             </div>
 
             <p className={`${styles.price}`}>
-              $170
+              $
+              {cart.cart.find((item) => item.name === product?.name)?.total ??
+                product?.price}
             </p>
           </div>
- 
+          {cart.cart.find((item) => item.name === product?.name)?.quantity && (
             <div className={`${styles.addToCart}`}>
-              <button onClick={() => console.log("remove from cart..")}>
+              <button onClick={() => dispatch(removeItem(product?.name))}>
                 REMOVE FROM CART
               </button>
             </div>
-          
+          )}
         </div>
       </div>
       <div className={`${styles.productDetails}`}>
