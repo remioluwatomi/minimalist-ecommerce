@@ -1,4 +1,4 @@
-// import type * as rtk from "@reduxjs/toolkit";
+import type * as _rtk from "@reduxjs/toolkit";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Product } from "../supabase/supabase";
 
